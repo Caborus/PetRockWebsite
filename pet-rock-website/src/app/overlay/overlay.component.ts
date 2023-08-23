@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './overlay.component.html',
   styleUrls: ['./overlay.component.scss']
 })
-export class OverlayComponent {
-
+export class OverlayComponent { 
+  opened: boolean = true;
 }

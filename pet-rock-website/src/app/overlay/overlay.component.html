@@ -1,1 +1,32 @@
-<p>overlay works!</p>
+<mat-toolbar autosize>   
+    <button routerLink="/home"><mat-icon fontIcon="home"></mat-icon></button>
+    
+    <button (click)="sidenav.toggle()"><mat-icon fontIcon="menu"></mat-icon></button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side">
+        <mat-button id="home-link-container" class="nav-link-container" routerLink="/home">
+            Home
+        </mat-button>
+        <mat-button id="pricing-link-container" class="nav-link-container" routerLink="/pricing">
+            Pricing
+        </mat-button>
+        <mat-button id="about-link-container" class="nav-link-container" routerLink="/about">
+            About
+        </mat-button>
+        <mat-button id="blog-link-container" class="nav-link-container" routerLink="/blog">
+            Blog
+        </mat-button>
+        <mat-button id="careers-link-container" class="nav-link-container" routerLink="/careers">
+            Careers
+        </mat-button>
+        <mat-button id="contact-link-container" class="nav-link-container" routerLink="/contact">
+            Contact
+        </mat-button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+

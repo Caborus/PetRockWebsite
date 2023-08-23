@@ -9,6 +9,15 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+
+$buff: CB997E;
+$desert-sand: DDBEA9;
+$champagne-pink: FFE8D6;
+$ash-grey: B7B7A4;
+$sage: A5A58D;
+$reseda-green: 6B705C;
+
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
