@@ -30,9 +30,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { OverlayModule } from '@angular/cdk/overlay';
-import {LayoutModule} from '@angular/cdk/layout';
-import {DialogModule} from '@angular/cdk/dialog';
-
+import { LayoutModule } from '@angular/cdk/layout';
+import { DialogModule } from '@angular/cdk/dialog';
 
 @NgModule({
   declarations: [

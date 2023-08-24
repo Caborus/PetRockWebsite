@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./overlay.component.scss']
 })
 export class OverlayComponent { 
-  opened: boolean = true;
+  opened: boolean = false;
 }

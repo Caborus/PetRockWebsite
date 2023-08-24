@@ -1,32 +1,48 @@
-<mat-toolbar autosize>   
-    <button routerLink="/home"><mat-icon fontIcon="home"></mat-icon></button>
-    
-    <button (click)="sidenav.toggle()"><mat-icon fontIcon="menu"></mat-icon></button>
-</mat-toolbar>
-
-<mat-sidenav-container>
+<mat-sidenav-container class="overlay-container">
     <mat-sidenav #sidenav mode="side">
-        <mat-button id="home-link-container" class="nav-link-container" routerLink="/home">
-            Home
-        </mat-button>
-        <mat-button id="pricing-link-container" class="nav-link-container" routerLink="/pricing">
-            Pricing
-        </mat-button>
-        <mat-button id="about-link-container" class="nav-link-container" routerLink="/about">
-            About
-        </mat-button>
-        <mat-button id="blog-link-container" class="nav-link-container" routerLink="/blog">
-            Blog
-        </mat-button>
-        <mat-button id="careers-link-container" class="nav-link-container" routerLink="/careers">
-            Careers
-        </mat-button>
-        <mat-button id="contact-link-container" class="nav-link-container" routerLink="/contact">
-            Contact
-        </mat-button>
+        <mat-list class="nav-list">
+            <mat-list-item class="nav-list-item" routerLink="/home">
+                <span id="home-link" class="nav-list-text">
+                    Home
+                </span>
+            </mat-list-item>
+            <mat-list-item class="nav-list-item" routerLink="/pricing">
+                <span id="pricing-link" class="nav-list-text">
+                    Pricing
+                </span>
+            </mat-list-item>
+            <mat-list-item class="nav-list-item" routerLink="/about">
+                <span id="about-link" class="nav-list-text">
+                    About
+                </span>
+            </mat-list-item>
+            <mat-list-item class="nav-list-item" routerLink="/blog">
+                <span id="blog-link" class="nav-list-text">
+                    Blog
+                </span>
+            </mat-list-item>
+            <mat-list-item class="nav-list-item" routerLink="/careers">
+                <span id="careers-link" class="nav-list-text">
+                    Careers
+                </span>
+            </mat-list-item>
+            <mat-list-item class="nav-list-item" routerLink="/contact">
+                <span id="contact-link" class="nav-list-text">
+                    Contact
+                </span>
+            </mat-list-item>
+        </mat-list>
     </mat-sidenav>
     <mat-sidenav-content>
+        <mat-toolbar class="navbar" color="primary" autosize>
+            <button id="menu-button" mat-button (click)="sidenav.toggle()">
+                <mat-icon class="toolbar-icon" fontIcon="menu"></mat-icon>
+            </button>
+            <span class="spacer"></span>
+            <button id="home-button" mat-button routerLink="/home">
+                <mat-icon class="toolbar-icon" fontIcon="home"></mat-icon>
+            </button>
+        </mat-toolbar>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
-
