@@ -1,1 +1,104 @@
-<p>payment works!</p>
+<mat-card class="payment-card">
+    <mat-card-header class="payment-header">
+      <mat-card-title class="payment-title">
+        <h1>Check Out</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="checkout-content">
+      <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+        <div class="row-1">
+          <mat-form-field class="full-width payment-form-field">
+            <mat-label>First Name</mat-label>
+            <input
+              matInput
+              placeholder="Cardholder Name"
+              formControlName="cardHolder"
+            />
+            <mat-error
+              *ngIf="paymentForm.controls['cardHolder'].hasError('required')"
+            >
+              First Name is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="row-1">
+          <mat-form-field class="full-width payment-form-field">
+            <mat-label>Card Number</mat-label>
+            <input
+              matInput
+              placeholder="Card Number"
+              formControlName="cardNumber"
+            />
+            <mat-error
+              *ngIf="paymentForm.controls['cardNumber'].hasError('required')"
+            >
+              Card Number is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="row-3">
+          <mat-form-field class="payment-form-field">
+            <mat-label>Expiration Date</mat-label>
+            <input
+              matInput
+              placeholder="Expiration Date"
+              formControlName="expirationDate"
+            />
+            <mat-error
+              *ngIf="
+                paymentForm.controls['expirationDate'].hasError('required')
+              "
+            >
+              Expiration Date is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="payment-form-field">
+            <mat-label>Security Code</mat-label>
+            <input
+              matInput
+              placeholder="Security Code"
+              formControlName="securityCode"
+            />
+            <mat-error
+              *ngIf="paymentForm.controls['securityCode'].hasError('required')"
+            >
+              Security Code is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="payment-form-field">
+            <mat-label>Zip Code</mat-label>
+            <input matInput placeholder="Zip Code" formControlName="zipCode" />
+            <mat-error
+              *ngIf="paymentForm.controls['zipCode'].hasError('required')"
+            >
+              Zip Code is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <h2>Total: {{ this.getPrice() }}</h2>
+
+        <div class="row3">
+          <mat-checkbox class="payment-checkbox" formControlName="terms">
+            I agree that this is a fake website and that my card isn't going to
+            actually do anything, so I'm not sure why I even filled it out...
+          </mat-checkbox>
+        </div>
+        <button
+          mat-raised-button
+          color="warn"
+          type="button"
+          class="payment-button"
+        >
+          Cancel
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="payment-button"
+        >
+          Submit
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>

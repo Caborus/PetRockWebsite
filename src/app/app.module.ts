@@ -32,6 +32,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { LayoutModule } from '@angular/cdk/layout';
 import { DialogModule } from '@angular/cdk/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { DialogModule } from '@angular/cdk/dialog';
     OverlayModule,
     LayoutModule,
     DialogModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -8,6 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { CareersComponent } from './careers/careers.component';
 import { BlogComponent } from './blog/blog.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactComponent
+      },
+      {
+        path: 'payment/:tier',
+        component: PaymentComponent
       }
     ]
   }
