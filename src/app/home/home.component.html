@@ -1,1 +1,76 @@
-<p>home works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock Hard Sitters</title>
+  </head>
+  <body>
+    <main>
+        
+        <div class="services-section">
+            <img src="/assets/images/lots_of_rocks.jpeg" alt="Background Image" class="bg-image">
+            <div class="cards-container">
+                <div class="service-card" *ngFor="let service of services">
+                    <h2>{{ service.title }}</h2>
+                    <p>{{ service.description }}</p>
+                    <button class="learn-more-btn" role="button"><span class="text">Learn More</span></button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="benefits-section">
+            <div class="benefit-header">
+                Over a Decade of Serene Stones, 180k+ Rocks Satisfied
+            </div>
+
+            <div class="benefit-wrapper">
+                <div class="benefit-card">
+                    <img src="assets/images/rocks_with_flower.webp" alt="Person holding a polished stone">
+                    <h3>Better for Rock Owners</h3>
+                    <p>Rock enthusiasts can travel or be away with true peace of mind, knowing their cherished stone is in safe hands.</p>
+                </div>
+            
+                <div class="benefit-card">
+                    <img src="/assets/images/stack_of_rocks.webp" alt="Person carefully placing a rock on a pedestal">
+                    <h3>Better for Pet Rocks</h3>
+                    <p>Every rock deserves its time in the spotlight. With dedicated sitters, they remain shiny, undisturbed, and in prime condition.</p>
+                </div>
+            
+                <div class="benefit-card">
+                    <img src="/assets/images/holding_some_rocks.webp" alt="Person with a collection of diverse stones">
+                    <h3>Better for Sitters</h3>
+                    <p>For those who appreciate the silent companionship of rocks, this is an opportunity to experience a variety of geological wonders and connect with like-minded enthusiasts.</p>
+                </div>
+            </div>
+        
+        </div>
+        
+
+        <!-- Decorative Bar -->
+        <div class="decorative-bar"></div>
+
+        <div class="reviews-section">
+            <h2>What Our Customers Say</h2>
+            <div class="reviews-wrapper">
+                <mat-card *ngFor="let review of reviews" class="review-card">
+                    <!-- Bind image source to the img property of the review -->
+                    <img mat-card-image [src]="review.img" alt="Reviewer" class="reviewer-image">
+                    <mat-card-content>
+                        <p>{{ review.content }}</p>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <span>- {{ review.author }}</span>
+                    </mat-card-footer>
+                </mat-card>
+            </div>
+        </div>
+        
+
+
+
+    </main>
+  </body>
+</html>

@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./overlay.component.scss']
 })
 export class OverlayComponent { 
-  opened: boolean = false;
+  routerlink_list = [
+    {name: 'about', url: '/about'},
+    {name: 'blog', url: '/blog'},
+    {name: 'careers', url: '/careers'},
+    {name: 'pricing', url: '/pricing'},
+    {name: 'contact', url: '/contact'}
+  ]
 }

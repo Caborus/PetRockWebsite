@@ -1,34 +1,99 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
-// Plus imports for other components in your app.
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
 @include mat.core();
 
+$amathyst-palette: (
+  50: #D9C6EC,
+  100: #C3A6E1,
+  200: #AE86D7,
+  300: #9966CC,
+  400: #8446C1,
+  500: #6E37A6,
+  600: #592D86,
+  700: #442266,
+  800: #2F1746,
+  900: #190D26,
+  contrast: (
+   50: #040206,
+   100: #040206,
+   200: #040206,
+   300: #040206,
+   400: #040206,
+   500: #FFFFFF,
+   600: #FFFFFF,
+   700: #FFFFFF,
+   800: #EEE5F6,
+   900: #EEE5F6,
+   A100: #040206,
+   A200: #040206,
+   A400: #040206,
+   A700: #FFFFFF
+ )
+);
+$maya-blue-palette: (
+  50: #C6ECEC,
+  100: #A6E1E1,
+  200: #86D7D7,
+  300: #66CCCC,
+  400: #46C1C1,
+  500: #37A6A6,
+  600: #2D8686,
+  700: #226666,
+  800: #174646,
+  900: #0D2626,
+  contrast: (
+   50: #020606,
+   100: #020606,
+   200: #020606,
+   300: #020606,
+   400: #020606,
+   500: #FFFFFF,
+   600: #FFFFFF,
+   700: #FFFFFF,
+   800: #E5F6F6,
+   900: #E5F6F6,
+   A100: #020606,
+   A200: #020606,
+   A400: #020606,
+   A700: #FFFFFF
+ )
+);
 
-$buff: CB997E;
-$desert-sand: DDBEA9;
-$champagne-pink: FFE8D6;
-$ash-grey: B7B7A4;
-$sage: A5A58D;
-$reseda-green: 6B705C;
+$red-warn-palette: (
+  50: #ECC6C6,
+  100: #E1A6A6,
+  200: #D78686,
+  300: #CC6666,
+  400: #C14646,
+  500: #A63737,
+  600: #862D2D,
+  700: #662222,
+  800: #461717,
+  900: #260D0D,
+  contrast: (
+   50: #060202,
+   100: #060202,
+   200: #060202,
+   300: #060202,
+   400: #060202,
+   500: #FFFFFF,
+   600: #FFFFFF,
+   700: #FFFFFF,
+   800: #F6E5E5,
+   900: #F6E5E5,
+   A100: #060202,
+   A200: #060202,
+   A400: #060202,
+   A700: #FFFFFF
+ )
+);
 
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$pet-rock-website-primary: mat.define-palette(mat.$green-palette);
-$pet-rock-website-accent: mat.define-palette(mat.$brown-palette, 50, 400, 800);
+$pet-rock-website-primary: mat.define-palette($amathyst-palette, 300);
+$pet-rock-website-accent: mat.define-palette($maya-blue-palette, 50, 300, 800);
 
-// The warn palette is optional (defaults to red).
-$pet-rock-website-warn: mat.define-palette(mat.$deep-orange-palette);
+$pet-rock-website-warn: mat.define-palette($red-warn-palette, 300);
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
 $pet-rock-website-theme: mat.define-light-theme((
   color: (
     primary: $pet-rock-website-primary,
@@ -37,12 +102,7 @@ $pet-rock-website-theme: mat.define-light-theme((
   )
 ));
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
 @include mat.all-component-themes($pet-rock-website-theme);
-
-/* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
