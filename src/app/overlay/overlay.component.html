@@ -1,35 +1,69 @@
-<mat-sidenav-container class="overlay-container">
-    <mat-sidenav #sidenav mode="side">
+<mat-sidenav-container class="mobile-container">
+    <mat-sidenav #sidenav mode="over" class="mobile-sidenav">
         <mat-list class="nav-list">
-            <mat-list-item class="nav-list-item" routerLink="/home">
-                <span id="home-link" class="nav-list-text">
-                    Home
-                </span>
+            <mat-list-item class="nav-list-item">
+                <button class="nav-list-button" routerLink="/home" (click)="sidenav.toggle()">
+                    <span id="home_link" class="nav-list-text">
+                        <!-- TODO: Add logo or something -->
+                        Rock Hard Sitters
+                    </span>
+                </button>
             </mat-list-item>
-            <mat-list-item class="nav-list-item" routerLink="/pricing">
-                <span id="pricing-link" class="nav-list-text">
-                    Pricing
-                </span>
+            <mat-list-item *ngFor="let link of routerlink_list" class="nav-list-item">
+                <button class="nav-list-button" routerLink="{{link.url}}" (click)="sidenav.toggle()">
+                    <span id="{{link.name}}_link" class="nav-list-text">
+                        {{link.name}}
+                    </span>
+                </button>
             </mat-list-item>
-            <mat-list-item class="nav-list-item" routerLink="/about">
-                <span id="about-link" class="nav-list-text">
-                    About
-                </span>
-            </mat-list-item>
-            <mat-list-item class="nav-list-item" routerLink="/blog">
-                <span id="blog-link" class="nav-list-text">
-                    Blog
-                </span>
-            </mat-list-item>
-            <mat-list-item class="nav-list-item" routerLink="/careers">
-                <span id="careers-link" class="nav-list-text">
-                    Careers
-                </span>
-            </mat-list-item>
-            <mat-list-item class="nav-list-item" routerLink="/contact">
-                <span id="contact-link" class="nav-list-text">
-                    Contact
-                </span>
+            <span class="spacer"></span>
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar class="navbar" color="primary" autosize>
+            <button id="menu-button" mat-button (click)="sidenav.toggle()">
+                <mat-icon class="toolbar-icon" fontIcon="menu"></mat-icon>
+            </button>
+            <span class="spacer"></span>
+            <button id="home-button" mat-button routerLink="/home">
+                <mat-icon class="toolbar-icon" fontIcon="home"></mat-icon>
+            </button>
+        </mat-toolbar>
+        <mat-toolbar-row class="desktop-header">
+            <mat-action-row class="desktop-nav-list">
+                <div class="site-name-button nav-list-item">
+                    <button class="nav-list-button" type="button" routerLink="/home">
+                        <span id="home_link" class="nav-list-text">
+                            <!-- TODO: Add logo or something -->
+                            Rock Hard Sitters
+                        </span>
+                    </button>
+                </div>
+                <div *ngFor="let link of routerlink_list" class="nav-list-item">
+                    <button class="nav-list-button" type="button" routerLink="{{link.url}}">
+                        <span id="{{link.name}}_link" class="nav-list-text">
+                            {{link.name}}
+                        </span>
+                    </button>
+                </div>
+            </mat-action-row>
+        </mat-toolbar-row>
+        <div class="desktop-container">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<!-- <mat-sidenav-container class="mobile-container">
+    <mat-sidenav #sidenav mode="over">
+        <mat-list class="nav-list">
+            <mat-list-item *ngFor="let link of routerlink_list" class="nav-list-item">
+                <button class="nav-list-item" mat-button routerLink="{{link.url}}" (click)="sidenav.toggle()">
+                    <span id="{{link.name}}_link" class="nav-list-text">
+                        {{link.name}}
+                    </span>
+                </button>
             </mat-list-item>
         </mat-list>
     </mat-sidenav>
@@ -46,3 +80,40 @@
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
+
+<div class="desktop-container">
+    <div class="desktop-navbar">
+        <div class="desktop-navbar-item" routerLink="/home">
+            <span id="home-link" class="desktop-navbar-text">
+                Home
+            </span>
+        </div>
+        <div class="desktop-navbar-item" routerLink="/pricing">
+            <span id="pricing-link" class="desktop-navbar-text">
+                Pricing
+            </span>
+        </div>
+        <div class="desktop-navbar-item" routerLink="/about">
+            <span id="about-link" class="desktop-navbar-text">
+                About
+            </span>
+        </div>
+        <div class="desktop-navbar-item" routerLink="/blog">
+            <span id="blog-link" class="desktop-navbar-text">
+                Blog
+            </span>
+        </div>
+        <div class="desktop-navbar-item" routerLink="/careers">
+            <span id="careers-link" class="desktop-navbar-text">
+                Careers
+            </span>
+        </div>
+        <div class="desktop-navbar-item" routerLink="/contact">
+            <span id="contact-link" class="desktop-navbar-text">
+                Contact
+            </span>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+
+</div> -->
